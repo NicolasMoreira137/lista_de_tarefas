@@ -1,7 +1,15 @@
-function add() {
-    var lista = document.getElementById("lista")
-    var item = document.getElementById('item')
-    var itens = item.content.cloneNode(true)
+function adicionarT() {
 
-    lista.appendChild(itens)
+    var areaTemplate = document.getElementById("template");
+    var conteudo = document.getElementById("nova-tarefa").value;
+    var novoItem = areaTemplate.content.cloneNode(true);
+    var li = novoItem.querySelector("li")
+
+    li.appendChild(document.createTextNode(conteudo))
+
+    // li.innerHTML = conteudo
+
+    var lista = document.getElementById("lista");
+
+    lista.appendChild(novoItem);
 }
