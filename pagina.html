@@ -2,11 +2,12 @@
 <html lang="pt-br">
 
 <head>
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com/" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="estilo.css" />
@@ -20,24 +21,19 @@
       <h2>Lista de Tarefas</h2>
       <div class="headerInput">
         <input type="text" id="nova-tarefa" placeholder="Escreva um novo item" />
-        <button class="addBtn" onclick="adicionarT()">Inserir</button>
+        <butoon class="addBtn" onclick="adicionarT()">Inserir</button>
       </div>
     </header>
 
     <template id="template">
       <li>
-
-
-        <button class="remover">Remover</button>
+        <button class="remover" onclick="remover(this)">Remover</button>
       </li>
 
     </template>
 
     <ul id="lista">
-      <li>
 
-        <button class="remover">Remover</button>
-      </li>
     </ul>
   </main>
 
@@ -45,4 +41,3 @@
 </body>
 
 </html>
-
