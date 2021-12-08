@@ -1,43 +1,40 @@
-var enter = document.getElementById("nova-tarefa");
-
-enter.addEventListener('keyup', (e) => {
-
-    if (e.key === "Enter") {
-        adicionarT()
-    }
-})
-
-function adicionarT() {
-    var conteudo = document.getElementById("nova-tarefa");
-
-    var areaTemplate = document.getElementById("template");
-
-    var novoItem = areaTemplate.content.cloneNode(true);
-
-    var li = novoItem.querySelector("li")
-
-    li.append(conteudo.value)
-
-    var lista = document.getElementById("lista");
-
-    if (conteudo.value == "") {
-        alert("Insira um texto");
-    }
-    else {
-        var numeroDeItens = lista.children.length;
-        if (numeroDeItens % 2 == 0) {
-            li.style.backgroundColor = "#E4EFF1"
-
-        }
-        if (numeroDeItens % 3 == 0) {
-            li.style.color = "red"
-        }
-        lista.append(novoItem);
-        conteudo.value = ""
-    }
+window.onload = () => {
+    listarTarefas();
 }
 
-function remover(elemento) {
-    elemento.parentElement.remove();
+var tarefas = [];
 
+function adicionarTarefa() {
+    var novaTarefa = document.getElementById("nova-tarefa");
+
+    tarefas.push(novaTarefa.value);
+    listarTarefas();
+
+    novaTarefa.value = "";
+}
+
+
+function listarTarefas() {
+    var lista = document.getElementById("lista");
+    lista.innerHTML = "";
+
+    var lista = document.getElementById("lista");
+    lista.innerHTML = "";
+
+    tarefas.forEach(function (item, posicao) {
+        var modeloItem = document.getElementById("modeloItem");
+        var novoItem = modeloItem.content.cloneNode(true);
+        var li = novoItem.querySelector('li');
+        li.value = posicao;
+        li.append(item);
+        lista.append(novoItem);
+
+    });
+}
+
+
+function remover(elemento) {
+    var posicao = elemento.parentElement.value
+    tarefas.splice(posicao, 1)
+    listarTarefas();
 }

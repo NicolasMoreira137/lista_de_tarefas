@@ -2,12 +2,11 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="estilo.css" />
@@ -21,23 +20,21 @@
       <h2>Lista de Tarefas</h2>
       <div class="headerInput">
         <input type="text" id="nova-tarefa" placeholder="Escreva um novo item" />
-        <butoon class="addBtn" onclick="adicionarT()">Inserir</button>
+        <button class="addBtn" onclick="adicionarTarefa()">Inserir</button>
       </div>
     </header>
 
-    <template id="template">
+    <template id="modeloItem">
       <li>
+        <!-- texto -->
         <button class="remover" onclick="remover(this)">Remover</button>
       </li>
-
     </template>
-
     <ul id="lista">
-
     </ul>
   </main>
 
-  <script src="adicionar.js"></script>
+  <script src="adicionarv2.js"></script>
 </body>
 
 </html>
